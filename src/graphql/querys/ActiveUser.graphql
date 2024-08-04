@@ -1,0 +1,21 @@
+query ActiveUser {
+  activeUser {
+    id
+    email
+    enabled
+    status
+    isTempPassword
+    updatedAt
+    name
+    role {
+      allowApp
+      permissions {
+        BACKOFFICE {
+          id
+          name
+          code
+        }
+      }
+    }
+  }
+}

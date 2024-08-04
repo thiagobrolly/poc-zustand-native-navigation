@@ -8,12 +8,13 @@ export function Routes() {
 
   theme.colors.background = '#fff';
 
-  // const auth = false;
-  const user = useAuthStore((state) => state.user);
+  const token = useAuthStore((state) => state.token);
+
+  console.log('CXXXXXXXXXXXXXXXXXXXXXX', token)
 
   return (
     <NavigationContainer theme={theme}>
-      {user ? <AppRoutes /> : <AuthRoutes />}
+      {token ? <AppRoutes /> : <AuthRoutes />}
     </NavigationContainer>
   );
 }

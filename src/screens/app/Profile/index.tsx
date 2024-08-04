@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import { AppNavigatorRoutesProps } from '@routes/app.routes';
 import { Text, TouchableOpacity, View } from 'react-native';
+import { useAuthStore } from '../../../stores/authStore';
 
 export function Profile() {
   const navigation = useNavigation<AppNavigatorRoutesProps>();
@@ -8,6 +9,12 @@ export function Profile() {
   function handleSignUp() {
     navigation.navigate('activities', {screen: 'messages'});
   }
+
+  const { user} = useAuthStore((store) => {
+    return {
+      user: store.user,
+    };
+  });
 
   return (
     <View
@@ -18,7 +25,7 @@ export function Profile() {
         backgroundColor: '#202024',
       }}
     >
-      <Text>Profile</Text>
+      <Text style={{ color: '#fff', fontSize: 20 }}>Profile: {user?.name}</Text>
 
       <TouchableOpacity
         onPress={handleSignUp}

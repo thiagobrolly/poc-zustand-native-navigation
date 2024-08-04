@@ -1,0 +1,8 @@
+mutation RefreshToken($input: RefreshInput!) {
+  refreshToken(input: $input) {
+    message
+    accessToken
+    refreshToken
+    isTempPassword
+  }
+}

@@ -1,0 +1,38 @@
+query Activities($filters: GetActivityInput) {
+  activities(filters: $filters) {
+    items {
+      id
+      om
+      type
+      executionDate
+      status
+      manager
+      assemblyType
+      createdAt
+      equipment {
+        id
+        name
+      }
+      scaffoldingList {
+        id
+        type
+        status
+        Book {
+          id
+          clientWork
+          projectReference
+          guidance
+          draftsman
+          designer
+          analyzedBy
+          validatedBy
+          contractNumber
+          qrCodeRequester
+          scaffoldingType
+          status
+        }
+      }
+    }
+    totalItems
+  }
+}

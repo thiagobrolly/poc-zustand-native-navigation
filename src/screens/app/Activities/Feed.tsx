@@ -10,11 +10,13 @@ export function Feed() {
   const navigation = useNavigation<ActivitiesNavigatorRoutesProps>();
   const route = useRoute();
 
-  const { user } = route.params as RouteParams;
+  // const { user } = route.params as RouteParams;
 
   function handleSignIn() {
     navigation.navigate('messages');
   }
+
+  console.log('route.params', route.params)
 
   return (
     <View
@@ -26,7 +28,7 @@ export function Feed() {
       }}
     >
       <Text>Feed</Text>
-      <Text>{user}</Text>
+      {/* <Text>{user}</Text> */}
 
       <TouchableOpacity
         onPress={handleSignIn}

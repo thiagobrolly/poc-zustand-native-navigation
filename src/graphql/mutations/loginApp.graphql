@@ -1,0 +1,8 @@
+mutation LoginApp($input: LoginInput!) {
+  loginApp(input: $input) {
+      message
+      accessToken
+      refreshToken
+      isTempPassword
+  }
+}

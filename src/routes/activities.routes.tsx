@@ -6,7 +6,8 @@ import { Feed } from '@screens/app/Activities/Feed';
 import { Messages } from '@screens/app/Activities/Messages';
 
 export type ActivitiesRoutesProps = {
-  feed: { user: string};
+  activities: undefined;
+  feed: { feed: string};
   messages: undefined;
 };
 
